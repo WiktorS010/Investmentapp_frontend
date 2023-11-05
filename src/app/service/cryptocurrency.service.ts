@@ -12,4 +12,11 @@ export class CryptocurrencyService {
   getCryptocurrencyList(): Observable<Cryptocurrency[]> {
     return this.http.get<Cryptocurrency[]>('http://localhost:8080/cryptocurrency/list');
   }
+  sendInfoFromCryptoList(symbol: string): Observable<any> {
+    const requestBody = {symbol: symbol}
+    return this.http.post<any>('http://localhost:8080/cryptocurrency/list', requestBody);
+  }
+  getCryptoInfo(): Observable<Cryptocurrency>{
+    return this.http.get<Cryptocurrency>('http://localhost:8080/investment/save')
+  }
 }

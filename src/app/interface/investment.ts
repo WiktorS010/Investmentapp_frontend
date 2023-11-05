@@ -4,4 +4,5 @@ export interface Investment {
   created: Date;
   enterPrice: number;
   income: number;
+  comment: string;
 }

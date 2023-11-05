@@ -12,10 +12,11 @@ export class InvestmentService {
     return this.http.get<Investment[]>('http://localhost:8080/investment/list');
   }
 
-  saveInvestment(symbol: string, investment: Investment): Observable<Investment> {
-    const data = {symbol, investment};
+  saveInvestment(investment: Investment): Observable<Investment> {
+    const data = {investment};
     return this.http.post<Investment>('http://localhost:8080/investment/save', data);
   }
+
 
   deleteInvestment(id: number): Observable<Investment> {
     return this.http.delete<Investment>('http://localhost:8080/investment/delete/${id}');
